@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="css/style.css")}}">
+        <title>Ninja Gold Mining</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to Gold Mining Ninjas</h1>
+            <p>Select a location and see how lucky you are mining for gold there....</P>
+            <label>Gold amount: {{session["gold"]}}</label>
+            <a href="/rest" class="btn btn-primary">Restart!</a>
+            <div class="Areas">
+                <div class="Mining_Locale">
+                    <form action="/process_money" method="post">
+                        <h4>Hunt around the Farm</h4>
+                        <img src="{{url_for("static", filename="images/Farm-small.jpg")}}" alt="Farming icon">
+                        <p>earn 10 - 20 gold</p>
+                        <input type="hidden" name="Location" value="Farm">
+                        <input type="submit" value="Farm Hunt">
+                    </form>
+                </div>
+                <div class="Mining_Locale">
+                    <form action="/process_money" method="post">
+                        <h4>Mine in a Cave</h4>
+                        <img src="{{url_for("static", filename="images/greece_Cave.jpg")}}" alt="Cave icon">
+                        <p>earn 5 - 10 gold</p>
+                        <input type="hidden" name="Location" value="Cave">
+                        <input type="submit" value="Cave Mining">
+                    </form>
+                </div>
+                <div class="Mining_Locale">
+                    <form action="/process_money" method="post">
+                        <h4>Search the House</h4>
+                        <img src="{{url_for("static", filename="images/little_House.jpg")}}" alt="House icon">
+                        <p>earn 2 - 5 gold</p>
+                        <input type="hidden" name="Location" value="House">
+                        <input type="submit" value="House Search">
+                    </form>
+                </div>
+                <div class="Mining_Locale">
+                    <form action="/process_money" method="post">
+                        <h4>Bet at the Casino</h4>
+                        <img src="{{url_for("static", filename="images/casino.jpg")}}" alt="Casino icon">
+                        <p>earn 0 - 50 gold</p>
+                        <input type="hidden" name="Location" value="Casino">
+                        <input type="submit" value="Casino Bets">
+                    </form>
+                </div>
+            </div>
+            <div class="Act-log">
+                <h2>Activity log:</h2>
+                <h3>{{session['activity'] | safe}}</h3>
+            </div>
+        </div>
+    </body>
+</html>

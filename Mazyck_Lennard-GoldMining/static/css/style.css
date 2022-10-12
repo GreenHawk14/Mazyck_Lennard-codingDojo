@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.Areas{
+    display: flex;
+    justify-content: center;
+}
+.Mining_Locale{
+    border: 1px solid black;
+    margin: 5px;
+    padding: 20px;
+    text-align: center;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+.container{
+    text-align: center;
+}
+.Act-log{
+    /* border: 2px solid blue; */
+    width: 1010px;
+    margin: 10px 0 200px 195px;
+    text-align: center;
+    justify-content: center;
+}
